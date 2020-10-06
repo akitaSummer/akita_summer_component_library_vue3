@@ -1,15 +1,19 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3.0 + Vite" />
+  <router-view/>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-
+<script lang="ts">
+import { ref, provide } from 'vue'
+import { router } from './router'
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  setup() {
+    const width = document.documentElement.clientWidth
+    const menuVisible = ref(width > 500)
+    provide('menuVisible', menuVisible)
+    router.afterEach(() => {
+      menuVisible.value = width > 500
+    })
   }
 }
 </script>
