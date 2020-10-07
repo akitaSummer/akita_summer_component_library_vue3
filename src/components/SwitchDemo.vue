@@ -1,77 +1,24 @@
 <template>
   <div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
-    <div>Switch</div>
+    <Switch v-model:value="value"/>
   </div>
 </template>
 
-<script>
- export default {
-  name: "SwitchDemo"
- }
+<script lang="ts">
+import Switch from "../lib/Switch.vue";
+import { ref, defineComponent } from 'vue';
+export default defineComponent({
+  name: "SwitchDemo",
+  components: {
+    Switch
+  },
+  setup() {
+    const bool = ref(true)
+    return {
+      bool
+    }
+  }
+})
 </script>
 
 <style scoped lang="scss">
