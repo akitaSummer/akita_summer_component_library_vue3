@@ -10,7 +10,7 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, computed, PropType} from 'vue'
+import { defineComponent, computed, PropType, toRefs } from 'vue'
 
 type LevelType = 'main' | 'normal' | 'danger'
 type ThemeType = 'button' | 'link' | 'text'
@@ -51,12 +51,13 @@ export default defineComponent({
     // return {
     //   rest
     // }
-    const { theme, size, level } = props
+    // props直接结构会失去响应式，需要使用toRefs后再结构
+    const { theme, size, level } = toRefs(props)
     const classes = computed(() => {
       return {
-        [`cheese-theme-${theme}`]: theme,
-        [`cheese-size-${size}`]: size,
-        [`cheese-level-${level}`]: level,
+        [`cheese-theme-${theme.value}`]: theme.value,
+        [`cheese-size-${size.value}`]: size.value,
+        [`cheese-level-${level.value}`]: level.value,
       }
     })
     return {

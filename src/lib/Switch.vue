@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue'
+import { defineComponent, PropType, toRefs } from 'vue'
 export default defineComponent({
   name: "Switch",
   props: {
@@ -17,11 +17,11 @@ export default defineComponent({
     }
   },
   setup(props, context) {
+    const { value, func } = toRefs(props)
     const toggle = () => {
-      const { value, func } = props
       // v-model事件名必须为update:开头
-      context.emit('update:value', !value)
-      func && func(!value)
+      context.emit('update:value', !value.value)
+      func?.value?.(!value)
     }
     return {
       toggle

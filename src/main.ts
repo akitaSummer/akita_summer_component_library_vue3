@@ -1,5 +1,5 @@
-import './lib/cheese.scss'
 import './index.scss'
+import './lib/cheese.scss'
 import { createApp } from 'vue'
 import App from './App.vue'
 import { router } from "./router"

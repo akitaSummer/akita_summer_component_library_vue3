@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Switch v-model:value="value"/>
+    <Switch v-model:value="bool"/>
   </div>
 </template>
 

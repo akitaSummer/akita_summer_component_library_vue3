@@ -1,15 +1,48 @@
 <template>
   <div>
-    <div>Dialog</div>
-    <div>Dialog</div>
-    <div>Dialog</div>
+    Dialog 示例
   </div>
+  <Button @click="toggle">示例1</Button>
+  <Dialog v-model:visible="flag" :ok="okFn" :cancel="cancelFn">
+    <template v-slot:title>
+      <div>title</div>
+    </template>
+    <template v-slot:content>
+      <div>hello</div>
+    </template>
+  </Dialog>
+  <br>
+  <Button @click="showDialog">示例2</Button>
 </template>
 
 <script>
- export default {
-  name: "DialogDemo"
- }
+import {defineComponent, toRef, ref} from 'vue';
+import Dialog from "../lib/Dialog.vue";
+import Button from "../lib/Button.vue";
+import { openDialog } from '../lib/openDialog'
+export default defineComponent({
+  name: "DialogDemo",
+  components: {
+    Dialog,
+    Button
+  },
+  setup() {
+    const flag = ref(false)
+    const toggle = () => {
+      flag.value = !flag.value
+    }
+    const showDialog = () => openDialog()
+    const okFn = () => {}
+    const cancelFn = () => {}
+    return {
+      flag,
+      toggle,
+      okFn,
+      cancelFn,
+      showDialog
+    }
+  }
+})
 </script>
 
 <style scoped lang="scss">
