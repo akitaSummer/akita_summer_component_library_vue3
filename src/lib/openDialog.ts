@@ -15,14 +15,18 @@ export const openDialog = (options?: optionsType) => {
   const app = createApp({
     render() {
       return h(Dialog, {
+        // @ts-ignore
         visible: true,
         'onUpdate:visible': (newVisible: boolean) => {
           if (!newVisible) {
             close()
           }
         },
+        // @ts-ignore
         closeOnClickOverlay: options?.closeOnClickOverlay,
+        // @ts-ignore
         ok: options?.ok,
+        // @ts-ignore
         cancel: options?.cancel
       }, {
         title: options?.title,
