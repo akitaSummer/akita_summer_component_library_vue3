@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Topnav/>
+    <Topnav class="nav" toggle-menu-button-visible="true"/>
     <div class="content">
       <aside v-if="menuVisible">
         <h2>文档</h2>

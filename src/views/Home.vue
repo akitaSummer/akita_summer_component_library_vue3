@@ -1,15 +1,45 @@
 <template>
   <div>
-    <Topnav/>
-    <div class="banner">
-      <h1>cheese UI</h1>
-      <h2>cheese UI</h2>
-      <p class="actions">
-        <a href="https://github.com/akitaSummer">Github</a>
-        <router-link to="/doc">开始</router-link>
-      </p>
+    <div class="topnavAndBanner">
+      <Topnav/>
+      <div class="banner">
+        <h1>cheese UI</h1>
+        <h2>cheese UI</h2>
+        <p class="actions">
+          <a href="https://github.com/akitaSummer">Github</a>
+          <router-link to="/doc">开始</router-link>
+        </p>
+      </div>
+    </div>
+    <div class="features">
+      <ul>
+        <li>
+          <svg class="icon">
+            <use xlink:href="#icon-vue"></use>
+          </svg>
+          <h3>基于 Vue 3</h3>
+          <p>使用了 Vue 3 Composition API</p>
+        </li>
+        <li>
+            <svg class="icon">
+              <use xlink:href="#icon-ts"></use>
+            </svg>
+            <h3>基于 TypeScript</h3>
+            <p>源码采用 TypeScript</p>
+        </li>
+        <li>
+          <div>
+            <svg class="icon">
+              <use xlink:href="#icon-ligth"></use>
+            </svg>
+            <h3>代码易读</h3>
+            <p>每个组件代码都易于阅读</p>
+          </div>
+        </li>
+      </ul>
     </div>
   </div>
+
 </template>
 
 <script lang="ts">

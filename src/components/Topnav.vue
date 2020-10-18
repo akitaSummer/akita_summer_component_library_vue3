@@ -1,28 +1,39 @@
 <template>
   <div class="topnav">
-    <div class="logo">LOGO</div>
+    <router-link to="/" class="logo">
+      <svg class="icon">
+        <use xlink:href="#icon-Cheese"></use>
+      </svg>
+    </router-link>
     <ul class="menu">
-      <li>菜单1</li>
-      <li>菜单2</li>
+      <router-link to="/doc">文档</router-link>
     </ul>
-    <span class="toggleAside" @click="toggleMenu"></span>
+    <svg v-if="toggleMenuButtonVisible" class="toggleAside" @click="toggleMenu">
+      <use xlink:href="#icon-menu"></use>
+    </svg>
   </div>
 </template>
 
 <script lang="ts">
-import { inject, Ref } from 'vue';
- export default {
+import { inject, Ref, defineComponent } from 'vue';
+ export default defineComponent({
   name: "Topnav",
+   props: {
+    toggleMenuButtonVisible: {
+      type: Boolean,
+      default: false
+    }
+   },
    setup() {
     const menuVisible = inject<Ref<boolean>>('menuVisible')
      const toggleMenu = () => {
-      menuVisible.value = !menuVisible.value
+      if (menuVisible) menuVisible.value = !menuVisible.value
      }
      return {
       toggleMenu
      }
    }
- }
+ })
 </script>
 
 <style scoped lang="scss">
@@ -62,7 +73,7 @@ $color: #007974;
     top: 50%;
     transform: translateY(-50%);
     display: none;
-    background: fade-out(black, 0.9);
+    //background: fade-out(black, 0.9);
   }
   @media (max-width: 500px) {
     >.menu {
