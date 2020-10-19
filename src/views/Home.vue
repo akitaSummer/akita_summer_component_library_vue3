@@ -21,20 +21,18 @@
           <p>使用了 Vue 3 Composition API</p>
         </li>
         <li>
-            <svg class="icon">
-              <use xlink:href="#icon-ts"></use>
-            </svg>
-            <h3>基于 TypeScript</h3>
-            <p>源码采用 TypeScript</p>
+          <svg class="icon">
+            <use xlink:href="#icon-ts"></use>
+          </svg>
+          <h3>基于 TypeScript</h3>
+          <p>源码采用 TypeScript</p>
         </li>
         <li>
-          <div>
-            <svg class="icon">
-              <use xlink:href="#icon-ligth"></use>
-            </svg>
-            <h3>代码易读</h3>
-            <p>每个组件代码都易于阅读</p>
-          </div>
+          <svg class="icon">
+            <use xlink:href="#icon-ligth"></use>
+          </svg>
+          <h3>代码易读</h3>
+          <p>每个组件代码都易于阅读</p>
         </li>
       </ul>
     </div>
