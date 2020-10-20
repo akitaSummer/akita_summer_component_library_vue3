@@ -2,11 +2,10 @@ import { createRouter, createWebHistory } from "vue-router";
 import { h } from 'vue'
 import Home from './views/Home.vue'
 import Doc from './views/Doc.vue'
-import SwitchDemo from './components/SwitchDemo.vue'
-import ButtonDemo from './components/ButtonDemo.vue'
-import TabsDemo from './components/TabsDemo.vue'
-import DialogDemo from './components/DialogDemo.vue'
-import DocDemo from './components/DocDemo.vue'
+import SwitchDemo from './components/SwitchDemo/SwitchDemo.vue'
+import ButtonDemo from './components/ButtonDemo/ButtonDemo.vue'
+import TabsDemo from './components/TabDemo/TabsDemo.vue'
+import DialogDemo from './components/DialogDemo/DialogDemo.vue'
 import Markdown from "./components/Markdown.vue";
 
 const markdownComponent = (filename: string) => h(Markdown, { path: `../markdown/${filename}.md` , key: filename })
@@ -22,7 +21,7 @@ export const router = createRouter({
       children: [
         {
           path: '',
-          component: DocDemo
+          redirect: '/doc/intro'
         },
         {
           path: 'intro',

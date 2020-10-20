@@ -1,13 +1,24 @@
 <template>
+  <h1>Tabs 组件示例</h1>
   <div>
-    <div>Doc</div>
+    <demo :component="TabsDemo1" />
   </div>
 </template>
 
-<script>
- export default {
-  name: "DocDemo"
- }
+<script lang="ts">
+import Demo from "../Demo.vue";
+import TabsDemo1 from "./TabsDemo1.vue";
+export default {
+  name: "TabsDemo",
+  components: {
+    Demo
+  },
+  setup() {
+    return {
+      TabsDemo1
+    }
+  }
+}
 </script>
 
 <style scoped lang="scss">
