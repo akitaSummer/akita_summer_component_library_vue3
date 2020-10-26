@@ -8,7 +8,7 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
-import Switch from "../../lib/Switch.vue";
+import { Switch } from "cheese-ui-vue";
 export default defineComponent({
   components: {
     Switch

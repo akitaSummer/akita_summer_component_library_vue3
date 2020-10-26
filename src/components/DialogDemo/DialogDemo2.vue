@@ -8,9 +8,7 @@
 
 <script lang="ts">
 import {defineComponent} from 'vue'
-import Button from "../../lib/Button.vue";
-import {openDialog} from "../../lib/openDialog";
-
+import { openDialog, Button } from "cheese-ui-vue";
 export default defineComponent({
   components: {
     Button

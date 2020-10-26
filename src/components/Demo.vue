@@ -5,7 +5,8 @@
       <component :is="component" />
     </div>
     <div class="demo-actions">
-      <Button @click="codeVisible = !codeVisible">查看代码</Button>
+      <Button v-if="codeVisible" @click="hideCode">隐藏代码</Button>
+      <Button v-else @click="showCode">查看代码</Button>
     </div>
     <div class="demo-code" v-if="codeVisible">
       <pre class="language-html" v-html="html"></pre>
@@ -18,11 +19,14 @@ import {defineComponent, toRefs, ref, Component, PropType, computed} from 'vue'
 import Button from "../lib/Button.vue";
 import 'prismjs';
 import 'prismjs/themes/prism.css'
+
+type ComponentType = { __sourceCode: string } & Component
+
 export default defineComponent({
   name: "Demo",
   props: {
     component: {
-      type: Object as PropType<Component>,
+      type: Object as PropType<ComponentType>,
       required: true
     }
   },
@@ -36,10 +40,14 @@ export default defineComponent({
       return Prism.highlight(component.value.__sourceCode, Prism.languages.html, 'html')
     })
     const codeVisible = ref(true)
+    const showCode = () => codeVisible.value = true
+    const hideCode = () => codeVisible.value = false
     return {
       Prism,
       html,
-      codeVisible
+      codeVisible,
+      showCode,
+      hideCode
     }
   }
 })

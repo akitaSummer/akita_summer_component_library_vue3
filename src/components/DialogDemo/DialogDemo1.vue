@@ -16,9 +16,7 @@
 
 <script lang="ts">
 import {defineComponent, ref} from 'vue'
-import Dialog from "../../lib/Dialog.vue";
-import Button from "../../lib/Button.vue";
-import {openDialog} from "../../lib/openDialog";
+import { Dialog, Button } from "cheese-ui-vue";
 export default defineComponent({
   components: {
     Dialog,

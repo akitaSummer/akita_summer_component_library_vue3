@@ -7,18 +7,9 @@ import { defineComponent, ref } from 'vue'
 export default defineComponent({
   name: "Markdown",
   props: {
-    path: {
+    content: {
       type: String,
       required: true
-    }
-  },
-  setup(props) {
-    const content = ref<string>('')
-    import(props.path).then(result => {
-      content.value = result.default
-    })
-    return {
-      content
     }
   }
 })

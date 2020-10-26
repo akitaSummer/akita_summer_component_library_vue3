@@ -11,8 +11,7 @@
 
 <script lang="ts">
 import {defineComponent, ref} from 'vue'
-import Tab from "../../lib/Tab.vue";
-import Tabs from "../../lib/Tabs.vue";
+import { Tab, Tabs } from "cheese-ui-vue";
 export default defineComponent({
   components: {
     Tab,
